@@ -1,0 +1,19 @@
+# docker-compose.yml
+version: '3.1'
+
+services:
+
+  db:
+    image: postgres:latest
+    restart: always
+    ports:
+      - ${PGPORT}:${PGPORT}
+    environment:
+      POSTGRES_USER: ${PGUSER}
+      POSTGRES_PASSWORD: ${PGPASSWORD}
+      POSTGRES_DB: ${PGDATABASE}
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8088:${ADMINER_PORT}

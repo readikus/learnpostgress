@@ -1,0 +1,15 @@
+{
+    "extends": "airbnb",
+    "globals": {
+        "windows": true,
+        "document": true
+    },
+    "rules": {
+        "strict": 0,
+        "consistent-this": [2, "client"],
+        "comma-dangle": 0
+    },
+    "parserOptions": {
+        "ecmaVersion": 2020
+    }
+}

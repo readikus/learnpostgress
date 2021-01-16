@@ -1,0 +1,72 @@
+{
+  "name": "news-capture",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "test",
+    "build": "rm -rf node_modules && npm install && npm run db:migrate && npm run createdata",
+    "createdata": "node tools/create-subjects.js && node tools/create-sites.js",
+    "dev": "node index.js",
+    "scrape": "node scraper/index.js",
+    "db:migrate": "node db/migrate.js",
+    "start": "node scraper/index.js",
+    "server": "node server.js",
+    "lint": "eslint .",
+    "lint:fix": "eslint . --fix",
+    "postgres:start": "docker-compose  -f docker-compose.postgres.yml up -d",
+    "postgres:stop": "docker-compose -f docker-compose.postgres.yml stop"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/readikus/news-capture.git"
+  },
+  "author": "Ian Read",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/readikus/news-capture/issues"
+  },
+  "homepage": "https://github.com/readikus/news-capture#readme",
+  "dependencies": {
+    "axios": "^0.19.2",
+    "cheerio": "^1.0.0-rc.3",
+    "dotenv": "^8.2.0",
+    "download": "^8.0.0",
+    "feedparser": "^2.2.10",
+    "find-rss": "^1.6.4",
+    "greenlock-express": "^4.0.3",
+    "greenlock-koa": "^2.1.4",
+    "iconv": "^3.0.0",
+    "koa": "^2.13.0",
+    "koa-ejs": "^4.3.0",
+    "koa-hbs": "^0.9.0",
+    "koa-passport": "^4.1.3",
+    "koa-route": "^3.2.0",
+    "koa-router": "^9.4.0",
+    "koa-static": "^5.0.0",
+    "koa-views": "^6.3.1",
+    "koa2-cors": "^2.0.6",
+    "log-timestamp": "^0.3.0",
+    "moment": "^2.27.0",
+    "open-graph-scraper": "^4.2.1",
+    "pg": "^8.0.2",
+    "postgrator": "latest",
+    "sharp": "^0.26.2",
+    "twit": "^2.2.11"
+  },
+  "devDependencies": {
+    "eslint": "^7.10.0",
+    "eslint-config-airbnb": "^18.2.0",
+    "eslint-plugin-import": "^2.21.2",
+    "eslint-plugin-jsx-a11y": "^6.3.1",
+    "eslint-plugin-react": "^7.21.3",
+    "husky": "^4.2.5",
+    "jest": "^26.1.0"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint",
+      "pre-push": "npm run lint"
+    }
+  }
+}
