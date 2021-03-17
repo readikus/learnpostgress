@@ -6,11 +6,8 @@
   "scripts": {
     "test": "test",
     "build": "rm -rf node_modules && npm install && npm run db:migrate && npm run createdata",
-    "createdata": "node tools/create-subjects.js && node tools/create-sites.js",
-    "dev": "node index.js",
-    "scrape": "node scraper/index.js",
+    "createdata": "node tools/create-data.js",
     "db:migrate": "node db/migrate.js",
-    "start": "node scraper/index.js",
     "server": "node server.js",
     "lint": "eslint .",
     "lint:fix": "eslint . --fix",
@@ -19,40 +16,19 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/readikus/news-capture.git"
+    "url": "git+https://github.com/readikus/learnpostgress.git"
   },
   "author": "Ian Read",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/readikus/news-capture/issues"
+    "url": "https://github.com/readikus/learnpostgress/issues"
   },
-  "homepage": "https://github.com/readikus/news-capture#readme",
+  "homepage": "https://github.com/readikus/learnpostgress#readme",
   "dependencies": {
-    "axios": "^0.19.2",
-    "cheerio": "^1.0.0-rc.3",
     "dotenv": "^8.2.0",
-    "download": "^8.0.0",
-    "feedparser": "^2.2.10",
-    "find-rss": "^1.6.4",
-    "greenlock-express": "^4.0.3",
-    "greenlock-koa": "^2.1.4",
-    "iconv": "^3.0.0",
-    "koa": "^2.13.0",
-    "koa-ejs": "^4.3.0",
-    "koa-hbs": "^0.9.0",
-    "koa-passport": "^4.1.3",
-    "koa-route": "^3.2.0",
-    "koa-router": "^9.4.0",
-    "koa-static": "^5.0.0",
-    "koa-views": "^6.3.1",
-    "koa2-cors": "^2.0.6",
     "log-timestamp": "^0.3.0",
-    "moment": "^2.27.0",
-    "open-graph-scraper": "^4.2.1",
     "pg": "^8.0.2",
-    "postgrator": "latest",
-    "sharp": "^0.26.2",
-    "twit": "^2.2.11"
+    "postgrator": "latest"
   },
   "devDependencies": {
     "eslint": "^7.10.0",
