@@ -25,7 +25,7 @@
   },
   "homepage": "https://github.com/readikus/learnpostgress#readme",
   "dependencies": {
-    "dotenv": "^8.2.0",
+    "dotenv": "^15.0.0",
     "log-timestamp": "^0.3.0",
     "pg": "^8.0.2",
     "postgrator": "latest"
